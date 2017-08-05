@@ -29,7 +29,7 @@ p(){ ps aux | grep $1 | grep -v grep; }
 #kill process
 pk(){ sudo killall -9 $1 ;}
 #repeat command
-repeat(){watch -n 1 $1 ; }
+repeat(){ watch -n 1 $1 ; }
 #top sorted by cpu
 alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
@@ -66,13 +66,13 @@ git_del_branch(){ git push origin --delete $1 ;  git branch -d $1 ; }
 #forgot to add msg to commit
 git_add_msg(){ git commit --amend -m "$1" ; }
 #removes file from tracking
-git_rm(){git rm --cached $1 ;}
+git_rm(){ git rm --cached $1 ;}
 #discard local changes
-git_discard(){git stash save --keep-index; }
+git_discard(){ git stash save --keep-index; }
 #pull overwriting local files and commits
-git_pull_hard(){  git fetch --all; git reset --hard origin/master; }
+git_pull_hard(){ git fetch --all; git reset --hard origin/master; }
 #purges file from history
-git_purge(){git filter-branch --prune-empty -d /dev/shm/scratch --index-filter "git rm --cached -f --ignore-unmatch $1" --tag-name-filter cat -- --all ;}
+git_purge(){ git filter-branch --prune-empty -d /dev/shm/scratch --index-filter "git rm --cached -f --ignore-unmatch $1" --tag-name-filter cat -- --all ;}
 
 #NODE NPM (edit)
 #start server with log and reboot-on-change with npm forever
