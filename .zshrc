@@ -82,9 +82,10 @@ vbox_ssh(){ ssh -p 3022 127.0.0.1 ;}
 
 #GIT
 #git force commit
-gg(){ git add . ; git commit -a -m $1 ; git push -u -f origin master ; }
+gg(){ git add -A ; git commit -a -m $1 ; git push -u -f origin master ; }
 #push master
-gp(){ git push -u -f origin master ; }
+alias gp='git push -u -f origin master'
+
 #generate this hosts git key
 git_key(){ ssh-keygen -t rsa -C "$1" ; cat ~/.ssh/id_rsa.pub; }
 #undo last commit
