@@ -1,12 +1,9 @@
 #PATH
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-export ANDROID_HOME=/opt/android
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 
-
 # ZSH
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -29,16 +26,6 @@ alias zx='subl ~/.zshrc'
 # .bashrc prompt alternative
 # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
-
-
-
-# NEURAL
-
-export CUDA_HOME=/usr/local/cuda-8.0
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64/
-export PATH=${CUDA_HOME}/bin:${PATH}
-. /home/alex/torch/install/bin/torch-activate
-alias ds='ssh alex@34.226.31.227'
 
 
 
@@ -77,7 +64,7 @@ alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
 #SYSTEMS (edit)
 #ARCH install
-alias i="pacaur --noedit --noconfirm --needed -S"%
+# alias i="pacaur --noedit --noconfirm --needed -S"%
 #UBUNTU upgrade
 alias u='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y'
 #UBUNTU install
@@ -97,7 +84,7 @@ vbox_ssh(){ ssh -p 3022 127.0.0.1 ;}
 #git force commit
 gg(){ git add . ; git commit -a -m $1 ; git push -u -f origin master ; }
 #push master
-gg(){ git push -u -f origin master ; }
+gp(){ git push -u -f origin master ; }
 #generate this hosts git key
 git_key(){ ssh-keygen -t rsa -C "$1" ; cat ~/.ssh/id_rsa.pub; }
 #undo last commit
