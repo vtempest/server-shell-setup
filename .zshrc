@@ -1,6 +1,46 @@
+#PATH
 
-#bashrc colors
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+export ANDROID_HOME=/opt/android
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+
+# ZSH
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+
+export ZSH=/home/alex/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+ENABLE_CORRECTION="true"
+plugins=(git)
+
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+alias zx='subl ~/.zshrc'
+# .bashrc prompt alternative
+# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+
+
+
+# NEURAL
+
+export CUDA_HOME=/usr/local/cuda-8.0
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64/
+export PATH=${CUDA_HOME}/bin:${PATH}
+. /home/alex/torch/install/bin/torch-activate
+alias ds='ssh alex@34.226.31.227'
+
+
 
 #FILES
 #unarchive
@@ -13,6 +53,7 @@ alias ll='ls -alh'
 alias la='ls -A'
 #back
 alias ..='cd ..'
+
 
 #SEARCH
 #find in files' content
@@ -29,7 +70,7 @@ p(){ ps aux | grep $1 | grep -v grep; }
 #kill process
 pk(){ sudo killall -9 $1 ;}
 #repeat command
-repeat(){ watch -n 1 $1 ; }
+loop(){ watch -n 1 $1 ; }
 #top sorted by cpu
 alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
@@ -74,7 +115,8 @@ git_pull_hard(){ git fetch --all; git reset --hard origin/master; }
 #purges file from history
 git_purge(){ git filter-branch --prune-empty -d /dev/shm/scratch --index-filter "git rm --cached -f --ignore-unmatch $1" --tag-name-filter cat -- --all ;}
 
-#NODE NPM (edit)
+
+# NODE NPM (edit)
 #start server with log and reboot-on-change with npm forever
 alias npm_start="nohup forever --minUptime=10 --spinSleepTime=2000 -e ~/server.log -o ~/server.log -a -v -w . >/dev/null 2>&1 &"
 #kill all nodes
