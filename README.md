@@ -17,3 +17,7 @@ cd ~ && mv .zshrc .zshrc.old
 wget https://raw.githubusercontent.com/gulakov/awesome-zshrc/master/.zshrc
 
 ```
+
+## Plugins 
+Zsh https://github.com/unixorn/awesome-zsh-plugins
+Oh-my-zsh https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
