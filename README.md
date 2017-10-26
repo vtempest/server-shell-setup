@@ -12,7 +12,7 @@ sh ~/.rc/setup.sh
 
 - Oh-my-zsh
   - Docs https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
-  - Plugins https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview-
+  - Plugins https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
   - Themes https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 - Hyper
   - Docs https://hyper.is/#installation
