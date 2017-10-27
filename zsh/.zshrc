@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 #source *.zsh
-for rcfile in ~/.rc/**.zsh; do
+for rcfile in ~/.rc/zsh/**.zsh; do
   source $rcfile;
 done
 alias y='yarn'

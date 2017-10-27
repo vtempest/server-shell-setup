@@ -6,7 +6,11 @@ sh ~/.rc/setup.sh
 
 ```
 
-![screen](https://github.com/gulakov/awesome-zsh/blob/master/docs/screen-10.26.png)
+![screen](https://github.com/gulakov/awesome-zsh/blob/master/docs/screen-zsh.png)
+
+
+![atom](https://github.com/gulakov/awesome-zsh/blob/master/docs/screen-atom.png)
+
 
 - Zsh
   - Docs https://wiki.archlinux.org/index.php/zsh

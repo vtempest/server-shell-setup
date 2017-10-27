@@ -1,4 +1,20 @@
 
+# Ubuntu Gnome packages & dconf settings/themes/keys:
+SYSTEM_APPS='~/.rc/ubuntu-apps'
+SYSTEM_CONF='~/.rc/ubuntu/ubuntu-gnome.dconf'
+
+
+system_restore(){
+  i $(cat SYSTEM_APPS | grep -oP "((?<=^)[^ ]*(?= -))"| tr '\n' ' ' );
+  dconf load / < SYSTEM_CONF;
+
+}
+
+system_backup(){
+  aptitude search '~i!~M' > SYSTEM_APPS;
+  dconf dump / > SYSTEM_CONF;
+}
+
 
 #UBUNTU install
 alias i='sudo apt-get install -y '

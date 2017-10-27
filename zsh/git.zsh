@@ -23,7 +23,8 @@ git_origin_overwrite(){
 
 #GIT
 #git force commit
-gg(){ git add . ; git commit -a -m $1 ; git push -u -f origin master ; }
+gg(){ git add --all . ; git commit -a -m $1 ; git push -u -f origin master ; }
+gadd(){ git add --all . ;}
 #push master
 gp(){ git push -u -f origin master ; }
 #generate this hosts git key
