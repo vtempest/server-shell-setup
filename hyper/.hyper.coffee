@@ -12,6 +12,7 @@ module.exports =
     'hyperterm-alternatescroll'
     'hyperborder'
     'hyperminimal'
+    'hyper-search'
   ]
   config:
     overlay:

@@ -37,5 +37,3 @@ alias n="yarn start"
 alias npm_stop="sudo killall -9 node && sudo killall -9 nodejs"
 #allow node on port 80 w/o sudo
 alias npm_node_on_80="sudo setcap cap_net_bind_service=+ep /usr/bin/node"
-
-alias npm_allow_global='sudo chmod 777 /usr/bin'

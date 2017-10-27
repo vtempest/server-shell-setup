@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['hyper-one-light', 'hyperterm-overlay', 'hyperline', 'hyperlinks', 'hypercwd', 'hyperterm-themed-scrollbar', 'hyperclean', 'hyperterm-clicky', 'hyperterm-alternatescroll', 'hyperborder', 'hyperminimal'],
+  plugins: ['hyper-one-light', 'hyperterm-overlay', 'hyperline', 'hyperlinks', 'hypercwd', 'hyperterm-themed-scrollbar', 'hyperclean', 'hyperterm-clicky', 'hyperterm-alternatescroll', 'hyperborder', 'hyperminimal', 'hyper-search'],
   config: {
     overlay: {
       alwaysOnTop: true,
