@@ -8,13 +8,12 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$PATH:${JAVA_HOME}/bin
 
+#fzf
+export PATH="$PATH:$HOME/.fzf/bin"
+
+
 # Anaconda3
 export PATH="/opt/anaconda/bin:$PATH"
-#fzf
-export PATH="$PATH:/home/alex/.fzf/bin"
-
-
-
 
 # NEURAL
 export CUDA_HOME=/usr/local/cuda-8.0
