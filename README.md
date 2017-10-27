@@ -22,3 +22,6 @@ sh ~/.rc/setup.sh
   - Docs https://hyper.is/#installation
   - Plugins https://github.com/bnb/awesome-hyper
   - Themes https://hyperthemes.matthi.coffee/
+
+
+[![Join the chat at https://gitter.im/awesome-zsh/Lobby](https://badges.gitter.im/awesome-zsh/Lobby.svg)](https://gitter.im/awesome-zsh/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
