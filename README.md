@@ -6,6 +6,8 @@ sh ~/.rc/setup.sh
 
 ```
 
+![screen](https://github.com/gulakov/awesome-zsh/blob/master/docs/screen-10.26.png)
+
 - Zsh
   - Docs https://wiki.archlinux.org/index.php/zsh
   - Plugins https://github.com/unixorn/awesome-zsh-plugins
