@@ -3,7 +3,7 @@
 # desktop only: install terminal from https://hyper.is/#installation
 # wget https://releases.hyper.is/download/AppImage
 #
-# Ubuntu Gnome dconf settings/themes/keys: 
+# Ubuntu Gnome dconf settings/themes/keys:
 # dconf load / < ubuntu-gnome.conf
 
 
@@ -13,6 +13,9 @@ chsh -s /bin/zsh
 
 #install oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+git clone https://github.com/zsh-users/zsh-history-substring-search .oh-my-zsh/custom/plugins/zsh-history-substring-search
+
 
 #install unix tools
 sudo apt install  -y silversearcher-ag ranger git fonts-roboto;

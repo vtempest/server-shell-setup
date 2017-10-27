@@ -7,7 +7,10 @@ alias_add(){
 
 
 
-#combine cd+ls so when you cd then auto ls
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+#combine cd+ls so when you cd then auto ls, folder also works w/o cd 
 chpwd() ls  --color=always -h
 
 

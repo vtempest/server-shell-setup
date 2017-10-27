@@ -1,15 +1,4 @@
-
-#EDITOR
-export EDITOR='atom'
-
-alias e='${EDITOR}'
-alias ,='${EDITOR} ~/.rc'
-
-
 # SSH
-#
-#
-#
 
 #sync this local project to host home dir
 sync(){
@@ -27,6 +16,11 @@ sshoist(){
 alias nx='sudo vi /etc/nginx/sites-enabled/default'
 alias nxr='sudo service nginx restart'
 
+
+
+https_enable(){
+  sudo certbot --nginx --standalone --preferred-challenges http -d ${1}
+}
 
 
 # NODE

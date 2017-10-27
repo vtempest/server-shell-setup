@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['hyperterm-material', 'hyperterm-overlay', 'hyperline', 'hyperlinks', 'hypercwd', 'hyperterm-themed-scrollbar', 'hyperclean'],
+  plugins: ['hyper-one-light', 'hyperterm-overlay', 'hyperline', 'hyperlinks', 'hypercwd', 'hyperterm-themed-scrollbar', 'hyperclean', 'hyperterm-clicky', 'hyperterm-alternatescroll', 'hyperborder', 'hyperminimal'],
   config: {
     overlay: {
       alwaysOnTop: true,
@@ -20,8 +20,11 @@ module.exports = {
       clickAction: 'open',
       defaultBrowser: true
     },
+    clicky: {
+      editor: 'atom'
+    },
     alternateScroll: {
-      scrollSpeed: 3
+      scrollSpeed: 10
     },
     hypercwd: {
       initialWorkingDirectory: '~'
@@ -39,7 +42,7 @@ module.exports = {
     termCSS: '',
     showHamburgerMenu: 'false',
     showWindowControls: 'false',
-    padding: '16px 14px',
+    padding: '10px 10px',
     shell: '',
     shellArgs: ['--login'],
     env: {},
@@ -49,7 +52,7 @@ module.exports = {
   localPlugins: [],
   keymaps: {
     'tab:next': 'Ctrl+Alt+Tab',
-    'tab:new': 'Alt+X',
+    'tab:new': 'ctrl+shift+T',
     'tab:next': 'ctrl+alt+tab',
     'tab:prev': 'ctrl+shift+tab',
     'pane:splitVertical': 'Ctrl+Tab',

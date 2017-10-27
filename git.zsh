@@ -6,6 +6,20 @@ gc(){
   cd ${DIR};
 }
 
+git_config(){
+  git config --global user.name $1;
+  git config --global user.email $2;
+
+  ssh-keygen -t rsa -C $2;
+  copyfile ~/.ssh/id_rsa.pub;
+  echo 'https://github.com/settings/ssh';
+  xdg-open 'https://github.com/settings/ssh'
+}
+
+git_origin_overwrite(){
+  echo 'git_origin_overwrite alex/repo.com.git  ===  git remote add origin git@github.com:yourname/repo.com.git';
+  git remote add origin git@github.com:$1;
+}
 
 #GIT
 #git force commit

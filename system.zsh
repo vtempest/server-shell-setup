@@ -5,45 +5,50 @@ alias i='sudo apt-get install -y '
 alias rem='sudo apt remove -y'
 
 #UBUNTU upgrade
-alias u='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y'
+u(){
+  sudo apt update;
+  sudo apt dist-upgrade -y;
+  sudo apt autoremove -y;
+}
+
+edit_repos(){
+    sudo apt edit-sources;
+}
 
 #reboot
 alias rs='sudo reboot'
 # shut down
-alias die='sudo shutdown -r -n now'
+alias die='sudo shutdown -r now'
 #stop asking for sudo password
-alias become_sudo="sudo echo '$USER ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
+alias become_god="sudo echo '$USER ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
 
 
+alias apt_list_installed="aptitude search '~i!~M'"
 
-#find process / kill
+#process: find  / kill
 alias p="sudo ps aux | grep "
 alias pk="sudo killall -9 "
 
-
-
-#PORTS
-
+#PORTS: find  / kill
 port(){
   lsof -i tcp:${1};
 }
-
-
-kill_port(){
+port_kill(){
   sudo lsof -t -i tcp:${1} | xargs kill -9
 }
 
 
-
 disk_space(){
+  sudo du -cks * | sort -rn | head -11
+}
+disk_space_overall(){
   sudo du -cha --max-depth=1 / | grep -E "M|G";
 }
 
 
 
 ipinfo(){
-  #change to your device
-
+  #change to internet device
   DEV='wlp4s0'
 
 

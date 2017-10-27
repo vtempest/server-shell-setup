@@ -14,6 +14,8 @@ sh ~/.rc/setup.sh
   - Docs https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
   - Plugins https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
   - Themes https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+
+- Terminal https://terminalsare.sexy/
 - Hyper
   - Docs https://hyper.is/#installation
   - Plugins https://github.com/bnb/awesome-hyper

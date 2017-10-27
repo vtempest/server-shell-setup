@@ -1,9 +1,4 @@
 
-certbot_enable(){
-  sudo certbot --nginx --standalone --preferred-challenges http -d ${1}
-}
-
-
 alias ai='apm install '
 alias a='${EDITOR} '
 alias s='subl'
@@ -18,6 +13,13 @@ docker_autostart_disable(){
   docker ps | awk {' print $1 '} | tail -n+2 > tmp.txt; for line in $(cat tmp.txt); do docker update --restart=no  $line; done; rm tmp.txt;
 
 }
+
+
+#EDITOR
+export EDITOR='atom'
+
+alias e='${EDITOR}'
+alias ,='${EDITOR} ~/.rc'
 
 
 #VIRTUALBOX - enables ssh into vbox
