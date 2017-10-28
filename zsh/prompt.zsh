@@ -1,6 +1,6 @@
 
 
-PROMPT='$(_user_host)%{$fg[cyan]%}%c $(git_prompt_info)%{$reset_color%}$(_git_time_since_commit)$(git_prompt_status)${_return_status}➜ '
+PROMPT='$(_user_host)%{$fg[cyan]%}%~ $(git_prompt_info)%{$reset_color%}$(_git_time_since_commit)$(git_prompt_status)${_return_status}➜ '
 
 local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
 
@@ -88,4 +88,4 @@ function _git_time_since_commit() {
 # ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 # ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 #
-# 
+#

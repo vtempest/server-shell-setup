@@ -5,7 +5,6 @@ sync(){
   rsync -azP -h --delete --exclude-from=.gitignore . ${1}:~
 }
 
-
 sshoist(){
   scp ~/.zshrc ${1}:~;
   ssh ${1};
@@ -16,24 +15,22 @@ sshoist(){
 alias nx='sudo vi /etc/nginx/sites-enabled/default'
 alias nxr='sudo service nginx restart'
 
-
-
 https_enable(){
   sudo certbot --nginx --standalone --preferred-challenges http -d ${1}
 }
 
 
-# NODE
-alias nis='npms search '
+#yarn
+alias y='yarn'
+alias yi='yarn install'
+alias ya=" yarn add "
+alias yag="yarn global add"
+alias yad="yarn add --dev"
+alias ys="yarn start"
 
-#installers
-alias ni=" yarn add "
-alias nig="yarn global add"
-alias nid="yarn add --dev"
-#start
-alias n="yarn start"
-
+# search
+alias nis='npms search'
 #kill all nodes
-alias npm_stop="sudo killall -9 node && sudo killall -9 nodejs"
+alias node_stop="sudo killall -9 node"
 #allow node on port 80 w/o sudo
-alias npm_node_on_80="sudo setcap cap_net_bind_service=+ep /usr/bin/node"
+alias node_80="sudo setcap cap_net_bind_service=+ep /usr/bin/node"

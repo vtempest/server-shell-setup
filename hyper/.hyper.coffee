@@ -8,11 +8,12 @@ module.exports =
     'hypercwd'
     'hyperterm-themed-scrollbar'
     'hyperclean'
-    'hyperterm-clicky'
+      # 'hyperterm-clicky'
     'hyperterm-alternatescroll'
     'hyperborder'
     'hyperminimal'
     'hyper-search'
+    'hyper-blink'
   ]
   config:
     overlay:
@@ -32,17 +33,17 @@ module.exports =
     hyperlinks:
       clickAction: 'open'
       defaultBrowser: true
-    clicky: editor: 'atom'
+    # clicky: editor: 'atom'
     # hyperTabs:
     #   trafficButtons: true
     #   tabIconsColored: true
     alternateScroll: scrollSpeed: 10
     hypercwd: initialWorkingDirectory: '~'
-    updateChannel: 'stable'
+    updateChannel: 'canary'
     fontSize: 14
     fontFamily: '"Roboto Mono", "Lucida Console", monospace'
     cursorColor: 'rgba(248,28,229,0.8)'
-    cursorShape: 'BLOCK'
+    cursorShape: 'UNDERLINE'
     cursorBlink: false
     foregroundColor: '#fff'
     backgroundColor: '#000'

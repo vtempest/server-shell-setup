@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['hyper-one-light', 'hyperterm-overlay', 'hyperline', 'hyperlinks', 'hypercwd', 'hyperterm-themed-scrollbar', 'hyperclean', 'hyperterm-clicky', 'hyperterm-alternatescroll', 'hyperborder', 'hyperminimal', 'hyper-search'],
+  plugins: ['hyper-one-light', 'hyperterm-overlay', 'hyperline', 'hyperlinks', 'hypercwd', 'hyperterm-themed-scrollbar', 'hyperclean', 'hyperterm-clicky', 'hyperterm-alternatescroll', 'hyperborder', 'hyperminimal', 'hyper-search', 'hyper-blink'],
   config: {
     overlay: {
       alwaysOnTop: true,
@@ -17,7 +17,7 @@ module.exports = {
       unique: true
     },
     hyperlinks: {
-      clickAction: 'open',
+      clickAction: 'copy',
       defaultBrowser: true
     },
     clicky: {
@@ -29,11 +29,11 @@ module.exports = {
     hypercwd: {
       initialWorkingDirectory: '~'
     },
-    updateChannel: 'stable',
+    updateChannel: 'canary',
     fontSize: 14,
     fontFamily: '"Roboto Mono", "Lucida Console", monospace',
     cursorColor: 'rgba(248,28,229,0.8)',
-    cursorShape: 'BLOCK',
+    cursorShape: 'UNDERLINE',
     cursorBlink: false,
     foregroundColor: '#fff',
     backgroundColor: '#000',

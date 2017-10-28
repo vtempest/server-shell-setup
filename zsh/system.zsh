@@ -61,6 +61,14 @@ disk_space_overall(){
   sudo du -cha --max-depth=1 / | grep -E "M|G";
 }
 
+chroot_mnt(){
+  mount /dev/sda4 /mnt;
+  cd /mnt;
+  mount -t proc proc proc/;
+  mount -t sysfs sys sys/;
+  mount -o bind /dev dev/;
+  chroot /mnt;
+}
 
 
 ipinfo(){

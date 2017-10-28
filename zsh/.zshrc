@@ -15,4 +15,4 @@ source $ZSH/oh-my-zsh.sh
 for rcfile in ~/.rc/zsh/**.zsh; do
   source $rcfile;
 done
-alias y='yarn'
+alias yf='node fuse'

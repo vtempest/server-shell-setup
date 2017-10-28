@@ -1,5 +1,14 @@
 
 ##SETUPS
+
+
+setup_vim(){
+  i neovim;
+  git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime;
+  sh ~/.vim_runtime/install_awesome_vimrc.sh;
+}
+
+
 setup_shell(){
   i silversearcher-ag ranger git;
 
@@ -44,11 +53,4 @@ setup_ajenti(){
   sudo apt-get update && i ajenti;
   sudo service ajenti restart;
 
-}
-
-
-setup_vim(){
-  i neovim;
-  git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime;
-  sh ~/.vim_runtime/install_awesome_vimrc.sh;
 }
