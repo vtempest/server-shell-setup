@@ -1,3 +1,4 @@
+> If you hold up a z shell to your ear, can you hear the C? 
 
 ```
 git clone https://github.com/gulakov/awesome-zshrc ~/.rc
