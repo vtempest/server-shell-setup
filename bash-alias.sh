@@ -17,9 +17,17 @@
 
 
 
-alias_add(){
-  echo "alias ${1}='${2}'" >> ~/.zshrc ; source ~/.zshrc;
-}
+#common top command aliases
+alias vim="nvim"
+
+alias sync_with_remote="rsync -azP -h --delete --exclude-from=.gitignore . " #user@host.com:~/folder
+alias i="sudo apt install -y"
+alias un="sudo apt remove -y"
+alias apps_names="apt list --installed | cut -d "/" -f1 | sed -z 's/\n/ /g'"
+alias apps_desc="sudo apt install -y aptitude; aptitude search '~i!~M'"
+
+#sort ducks in a row by head
+alias diskspace="sudo du -cks * | sort -rn | head -11"
 
 
 alias f='ag --hidden --ignore .git -l -g "" | fzf -e -x --height=20% '
@@ -27,16 +35,10 @@ alias f='ag --hidden --ignore .git -l -g "" | fzf -e -x --height=20% '
 #find in files' content
 alias ff='ag --hidden --nobreak --nonumbers --noheading . | fzf'
 
-# alias ff='ag -g'
-alias fd='ag -g'
-# f(){ grep -RIs "$1" .; }
 #find in files' names\
 #find & replace in files' content
 fr(){ find . -type f -exec sed -i "s/$1/$2/g" \{\} \; ;}
 
-alias d='ranger '
-
-#FILES
 #own folder
 own(){ sudo chmod 777 -R ${1:-.} && sudo chown -R ${USER} ${1:-.}; }
 #list detailed
@@ -50,7 +52,7 @@ alias i='sudo apt-get install -y '
 alias rem='sudo apt remove -y'
 
 #UBUNTU upgrade
-u(){
+up(){
   sudo apt update;
   sudo apt dist-upgrade -y;
   sudo apt autoremove -y;
