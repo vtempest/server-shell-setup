@@ -37,8 +37,8 @@ setup_shell(){
   curl -sS https://starship.rs/install.sh | sh
 
   #install prompt into nu shell
-  echo "mkdir ~/.cache/starship; starship init nu | save -f ~/.cache/starship/init.nu" >> (echo $nu.env-path)
-  echo "use ~/.cache/starship/init.nu" >>  (echo $nu.config-path)
+  echo "mkdir ~/.cache/starship; starship init nu | save -f ~/.cache/starship/init.nu" >> (/home/$USER/.config/nushell/env.nu)
+  echo "use ~/.cache/starship/init.nu" >>  (/home/$USER/.config/nushell/config.nu)
   
   #install prompt into fish shell
   echo "starship init fish | source" >> ~/.config/fish/config.fish
@@ -52,12 +52,12 @@ setup_shell(){
 setup_docker(){
   curl -fsSL https://test.docker.com -o test-docker.sh; 
   sh test-docker.sh;
+  sudo apt-get install -y uidmap;
+  dockerd-rootless-setuptool.sh install;
 }
 
 # first-time setup of root ssh user 
 setup_root(){
-  #create sudo user
-  sudo useradd -m -G sudo user
 
   # allow ssh with password, which is disabled on aws ec2 ubuntu
   sed -re 's/^(PasswordAuthentication)([[:space:]]+)no/\1\2yes/' -i.date -I /etc/ssh/sshd_config; 

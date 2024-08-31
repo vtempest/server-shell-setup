@@ -41,7 +41,8 @@ system_info(){
     echo -ne "\e[91m 📈 $CPU"
 
     #os
-    export OS=$([ -f /etc/*release ] && cat /etc/*release| grep -oP -m1 "NAME=\"\K([^\"]*)")
+
+    export OS=$([ -f /etc/os-release ] && grep -oP "^NAME=\"\K[^\"]+" /etc/os-release)
     echo -ne "\e[34m 💻 $OS"
     
     #device
