@@ -45,7 +45,7 @@ Note: Launch Ubuntu server instance, connect and on first time login run `sudo p
 - [Fish Playground](https://rootnroll.com/d/fish-shell/)
 - [Bun.js Runtime Docs](https://bun.sh/docs)
 - [Node.js Best Packages](https://github.com/sindresorhus/awesome-nodejs)
-- [nvm Node Installer](https://github.com/nvm-sh/nvm)
+- [Volta Node Installer](https://docs.volta.sh/guide/)
 - [pnpm Package Installer](https://pnpm.io/pnpm-cli)
 - [Starship Prompt](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 - [VSCode Docs](https://code.visualstudio.com/docs)

@@ -43,15 +43,15 @@ setup_shell(){
   #pacstall - discover 3rd party deb packages
   sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 
-  #clear default greeting
-  sudo rm -f  /etc/motd; sudo rm -rf  /etc/update-motd.d; touch ~/.hushlogin; 
-  fish -c "set -U fish_greeting \"\""
-
-  #install greeting
+   #install greeting
   sudo wget https://raw.githubusercontent.com/vtempest/server-shell-setup/refs/heads/master/systeminfo.sh -O ~/.config/systeminfo.sh
   sudo chmod +x ~/.config/systeminfo.sh
   sudo echo "bash ~/.config/systeminfo.sh" >> ~/.bashrc
   sudo echo "bash ~/.config/systeminfo.sh" >> ~/.config/fish/config.fish
+
+  #clear default greeting
+  fish -c "set -U fish_greeting \"\""
+  sudo rm -f  /etc/motd; sudo rm -rf  /etc/update-motd.d; touch ~/.hushlogin; 
 
 
   # fish plugins config - goes into fish
