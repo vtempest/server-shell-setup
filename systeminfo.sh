@@ -58,8 +58,7 @@ system_info(){
     # package managers - system and languages
     # remove less common ones to save load time
     echo -ne "\e[31m 🚀"
-    for cmd in "apt" "npm" "pip" "docker"\
-          \ "hx" "nvim" "bun"
+    for cmd in "apt" "npm" "pip" "docker" "hx" "nvim" "bun" \
         # \ "pkg" "flatpak"  "yum" "snap" "pacman"\
         # \ "apk"  "brew" "bun"
     do  

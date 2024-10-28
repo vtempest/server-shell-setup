@@ -1,11 +1,19 @@
 
 > If you hold a unix shell up to your ear, can you hear the C?
 
-# The Devil Is In The Defaults
+## The Devil Is In The Defaults
 
-`vscode`, `nvim`, `nu`, `bun`, `node`, `helix`, `starship prompt` and other dev tools. 
+Setup server shell with `vscode`, `nvim`, `nu`, `bun`, `node`, `helix`, `starship prompt`, `pacstall installer`,  and other dev tools. 
 
-## System Info When Opening Shell
+## Bash Script to Setup Shell 
+
+```bash
+sudo bash -c "$( wget -q https://raw.githubusercontent.com/vtempest/server-shell-setup/refs/heads/master/install-shell.sh -O -)"
+```
+
+Note: Launch Ubuntu server instance, connect and on first time login run `sudo passwd $USER` to set password. You need to enter sudo password when running this setup
+
+## Example: System Info When Opening Shell
 
     👤 user@XPS15 🔝  0% fish 📁  1% 🌎  130.212.146.39 👮 California State University 📈  Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz 💻  Debian GNU/Linux 12 (bookworm) 🔧  5.15.90.1-microsoft-standard-WSL2 🚀  apt docker git  npm pip
 

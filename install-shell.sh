@@ -3,6 +3,7 @@
 # setup shell with best dev tools on Ubuntu
 # fish, nushell, nvim, helix, node, bun, pacstall, docker
 
+# sudo passwd ${USER} # set password for user
 setup_shell(){
 
   #add fish nvim helix to ubuntu PPA
@@ -13,38 +14,51 @@ setup_shell(){
 
   sudo apt install -y fish neovim  git wget curl helix 
 
-  # fish plugins config
-  curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-  omf install fzf nvm
 
   #bun 
   curl -fsSL https://bun.sh/install | bash
 
-  #node 
-  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash; 
-  nvm install node
-  
+  #node with volta
+  curl https://get.volta.sh | bash
+  source ~/.bashrc
+  volta install node
+
   #install nushell
   npm i -g pnpm nushell
 
   #nvim config
   git clone https://github.com/LazyVim/starter ~/.config/nvim 
 
-  #clear default greeting
-  sudo rm  /etc/motd; sudo rm -rf  /etc/update-motd.d; touch ~/.hushlogin; 
 
-  #starship prompt 
-  curl -sS https://starship.rs/install.sh | sh
+  #starship prompt -- needs manual setup
+  sudo sh -c "$(curl -sS https://starship.rs/install.sh )"
 
   #install prompt into nu shell
-  echo "mkdir ~/.cache/starship; starship init nu | save -f ~/.cache/starship/init.nu" >> (/home/$USER/.config/nushell/env.nu)
-  echo "use ~/.cache/starship/init.nu" >>  (/home/$USER/.config/nushell/config.nu)
+  echo "mkdir ~/.cache/starship; starship init nu | save -f ~/.cache/starship/init.nu" >> /home/$USER/.config/nushell/env.nu
+  echo "use ~/.cache/starship/init.nu" >> /home/$USER/.config/nushell/config.nu
   
   #install prompt into fish shell
   echo "starship init fish | source" >> ~/.config/fish/config.fish
 
   #pacstall - discover 3rd party deb packages
-  curl -fsSL https://pacstall.dev/q/install | bash
+  sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
+
+  #clear default greeting
+  sudo rm -f  /etc/motd; sudo rm -rf  /etc/update-motd.d; touch ~/.hushlogin; 
+  fish -c "set -U fish_greeting \"\""
+
+  #install greeting
+  sudo wget https://raw.githubusercontent.com/vtempest/server-shell-setup/refs/heads/master/systeminfo.sh -O ~/.config/systeminfo.sh
+  sudo chmod +x ~/.config/systeminfo.sh
+  sudo echo "bash ~/.config/systeminfo.sh" >> ~/.bashrc
+  sudo echo "bash ~/.config/systeminfo.sh" >> ~/.config/fish/config.fish
+
+
+  # fish plugins config - goes into fish
+  curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+  fish -c "omf install fzf nvm"
+  bash
+
 }
 
 
@@ -73,3 +87,4 @@ setup_root(){
 #run main 
 setup_shell
 
+setup_docker
