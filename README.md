@@ -15,11 +15,11 @@ Note: Launch Ubuntu server instance, connect and on first time login run `sudo p
 
 ## Example: System Info When Opening Shell
 
-    👤 user@XPS15 🔝  0% fish 📁  1% 🌎  130.212.146.39 👮 California State University 📈  Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz 💻  Debian GNU/Linux 12 (bookworm) 🔧  5.15.90.1-microsoft-standard-WSL2 🚀  apt docker git  npm pip
-
-`wget -qO- https://raw.githubusercontent.com/vtempest/server-shell-setup/master/systeminfo.sh | bash`
-
-
+```bash
+👤 user@XPS15 🔝  0% fish 📁  1% 🌎  130.212.146.39 👮 California State University 
+📈  Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz 💻  Debian GNU/Linux 12 (bookworm) 
+🔧  5.15.90.1-microsoft-standard-WSL2 🚀  apt docker git  npm pip
+```
 ## Reference Docs - 🪄 Magic Spells for Open Sourcery 
 
 - [nushell Docs](https://www.nushell.sh/book/)
