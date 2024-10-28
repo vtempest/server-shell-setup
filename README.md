@@ -1,11 +1,28 @@
 
-> If you hold a unix shell up to your ear, can you hear the C?
+<p align="center">
+    <img src="https://i.imgur.com/3qLFAvW.jpeg">
+</p>
+<p align="center">
+    <img alt="GitHub Stars" src="https://img.shields.io/github/stars/vtempest/server-shell-setup">
+    <a href="https://github.com/vtempest/server-shell-setup/discussions">
+    <img alt="GitHub Discussions"
+        src="https://img.shields.io/github/discussions/vtempest/server-shell-setup">
+    </a>
+    <a href="http://makeapullrequest.com">
+        <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
+    </a>
+    <a href="https://codespaces.new/vtempest/server-shell-setup">
+    <img src="https://github.com/codespaces/badge.svg" width="150" height="20">
+    </a>
+</p>
 
 ## The Devil Is In The Defaults
 
+> If you hold a unix shell up to your ear, can you hear the C?
+
 Setup server shell with `vscode`, `nvim`, `nu`, `bun`, `node`, `helix`, `starship prompt`, `pacstall installer`,  and other dev tools. 
 
-## Bash Script to Setup Shell 
+## Install: Bash Script to Setup Shell 
 
 ```bash
 sudo bash -c "$( wget -q https://raw.githubusercontent.com/vtempest/server-shell-setup/refs/heads/master/install-shell.sh -O -)"
@@ -20,7 +37,8 @@ Note: Launch Ubuntu server instance, connect and on first time login run `sudo p
 📈  Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz 💻  Debian GNU/Linux 12 (bookworm) 
 🔧  5.15.90.1-microsoft-standard-WSL2 🚀  apt docker git  npm pip
 ```
-## Reference Docs - 🪄 Magic Spells for Open Sourcery 
+
+## Reference Docs: 🪄 Magic Spells for Open Sourcery 
 
 - [nushell Docs](https://www.nushell.sh/book/)
 - [Fish Features Overview](https://medium.com/the-glitcher/fish-shell-3ec1a6cc6128)

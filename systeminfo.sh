@@ -7,10 +7,10 @@
 system_info(){
 
     #user
-    echo -ne "\e[31m👤 $(whoami)"
+    echo -ne "\e[31m👤$(whoami) "
 
     #hostname
-    echo -ne "\e[91m🏠 $(hostname)"
+    echo -ne "\e[91m🏠$(hostname)"
 
     #top_process
     export TOP_PROC=$(ps -eo pcpu,comm --sort=-%cpu --no-headers \
@@ -29,10 +29,10 @@ system_info(){
     CITY=$(echo "$INFO" | grep -oP 'city"\s*:\s*"\K[^"]+' 2>/dev/null)
     DOMAIN=$(echo "$INFO" | grep -oP 'hostname"\s*:\s*"\K[^"]+' 2>/dev/null)
 
-    # Display information
-    echo -ne "\033[32m 🌎 ${IP:-No IP}"
-    echo -ne "\033[32m 📍 ${CITY:-No City}"
-    [ -n "$DOMAIN" ] && echo -ne "\033[37m 🔗 $DOMAIN" || echo
+    # network ip and external isp domain name
+    [ -n "$IP" ] && echo -ne "\033[32m 🌎 ${IP:-No IP}"|| echo  -ne "\033[37m 🌎 No Network"
+    [ -n "$CITY" ] && echo -ne "\033[32m 📍 ${CITY:-No City}"
+    [ -n "$DOMAIN" ] && echo -ne "\033[37m 🔗 http://$DOMAIN" 
 
     #isp
     export ISP=$(echo $INFO | grep -oP 'org\": "\K[^"]+' | cut -f 1 -d ' ' --complement)
