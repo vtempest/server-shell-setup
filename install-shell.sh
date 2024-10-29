@@ -4,12 +4,15 @@
 # fish, nushell, nvim, helix, node, bun, pacstall, docker
 
 # sudo passwd ${USER} # set password for user
+# INSTALL:
+# sudo bash -c "$( wget -q https://raw.githubusercontent.com/vtempest/server-shell-setup/refs/heads/master/install-shell.sh -O -)"
+
 setup_shell(){
 
   #add fish nvim helix to ubuntu PPA
-  sudo apt-add-repository ppa:fish-shell/release-3
-  sudo add-apt-repository ppa:neovim-ppa/stable
-  sudo add-apt-repository ppa:maveonair/helix-editor
+  echo -e '\n' | sudo apt-add-repository ppa:fish-shell/release-3
+  echo -e '\n' | sudo add-apt-repository ppa:neovim-ppa/stable
+  echo -e '\n' | sudo add-apt-repository ppa:maveonair/helix-editor
   sudo apt update
 
   sudo apt install -y fish neovim  git wget curl helix 
@@ -19,9 +22,10 @@ setup_shell(){
   curl -fsSL https://bun.sh/install | bash
 
   #node with volta
-  curl https://get.volta.sh | bash
+  bash -c "$(curl -sS https://get.volta.sh )"
+
   source ~/.bashrc
-  volta install node
+  bash -c "volta install node"
 
   #install nushell
   npm i -g pnpm nushell
@@ -30,7 +34,30 @@ setup_shell(){
   git clone https://github.com/LazyVim/starter ~/.config/nvim 
 
 
-  #starship prompt -- needs manual setup
+   #install greeting
+  sudo wget https://raw.githubusercontent.com/vtempest/server-shell-setup/refs/heads/master/systeminfo.sh -O ~/.config/systeminfo.sh
+  sudo chmod +x ~/.config/systeminfo.sh
+  sudo echo "bash ~/.config/systeminfo.sh" >> ~/.bashrc
+  sudo echo "bash ~/.config/systeminfo.sh" >> ~/.config/fish/config.fish
+
+
+  #pacstall - discover 3rd party deb packages
+  yes  | sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
+
+  #clear default greeting
+  fish -c "set -U fish_greeting \"\""
+  sudo rm -f  /etc/motd; sudo rm -rf  /etc/update-motd.d; touch ~/.hushlogin; 
+
+
+  # fish plugins config - goes into fish
+  curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
+  chmox +x omf-install.sh
+  fish -c "./omf-install.sh --path=~/.local/share/omf --config=~/.config/omf"
+  fish -c "omf install fzf nvm"
+  rm -f omf-install.sh
+
+
+   #starship prompt -- needs manual setup
   sudo sh -c "$(curl -sS https://starship.rs/install.sh )"
 
   #install prompt into nu shell
@@ -40,24 +67,7 @@ setup_shell(){
   #install prompt into fish shell
   echo "starship init fish | source" >> ~/.config/fish/config.fish
 
-  #pacstall - discover 3rd party deb packages
-  sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
-
-   #install greeting
-  sudo wget https://raw.githubusercontent.com/vtempest/server-shell-setup/refs/heads/master/systeminfo.sh -O ~/.config/systeminfo.sh
-  sudo chmod +x ~/.config/systeminfo.sh
-  sudo echo "bash ~/.config/systeminfo.sh" >> ~/.bashrc
-  sudo echo "bash ~/.config/systeminfo.sh" >> ~/.config/fish/config.fish
-
-  #clear default greeting
-  fish -c "set -U fish_greeting \"\""
-  sudo rm -f  /etc/motd; sudo rm -rf  /etc/update-motd.d; touch ~/.hushlogin; 
-
-
-  # fish plugins config - goes into fish
-  curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-  fish -c "omf install fzf nvm"
-  bash
+ 
 
 }
 
